@@ -26,7 +26,7 @@ const Profile = (props:Properties, handleClick) => {
                     src={Alexa}
                 />
                 <p>{nome[0].subject} {nome[0].ImageId}</p>
-                <button onClick={() => handleClick()}></button>
+                <button onChange={() => handleClick()}></button>
             </div>   
         </>
     )
