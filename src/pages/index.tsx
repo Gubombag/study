@@ -2,39 +2,28 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
-import Profile from '@/components/Props'
+import Profile from '@/components/Props/index'
 import { useState } from 'react'
 import Properties from "@/components/Props/props"
 
-const inter = Inter({ subsets: ['latin'] })
-
-let nome = [
-  {
-      subject: "Gustavo",
-      ImageId: "0101"
-  },
-  {
-      subject:"Artur",
-      ImageId: "01010101"
-  }
-]
+const inter = Inter({ subsets: ['latin'] }) 
 
   export default function Home(props: Properties) {
 
-    const [nomeChange, setnomeChange] = useState(nome[0].subject);
-    const [imageIdChange, setimageIdChange] = useState(nome[0].ImageId)
+    const [persons, setPersons] = useState([
+      {
+          subject: "Gustavo",
+          ImageId: "0101"
+      },
+      {
+          subject:"Artur",
+          ImageId: "01010101"
+      }
+    ]);
 
     const handleClick = () => {
-      if (nomeChange == nome[0].subject) {
-          setnomeChange(nome[1].subject);
-      } else {
-          setnomeChange(nome[0].subject)
-      }
-
-      if(imageIdChange == nome[0].ImageId) {
-          setimageIdChange(nome[1].ImageId)
-      } else {
-          setimageIdChange(nome[0].ImageId)
+      if(persons[0].subject) {
+        setPersons(persons[1].subject)
       }
   }
 

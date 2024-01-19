@@ -15,7 +15,7 @@ let nome = [
     }
 ]
 
-const Profile = (props:Properties, handleClick) => {
+const Profile = (props:Properties) => {
     return(
         <>
             <div>
@@ -26,7 +26,7 @@ const Profile = (props:Properties, handleClick) => {
                     src={Alexa}
                 />
                 <p>{nome[0].subject} {nome[0].ImageId}</p>
-                <button onChange={() => handleClick()}></button>
+                <button onChange={() => handleClick()}>{nome[0].subject} {nome[0].ImageId}</button>
             </div>   
         </>
     )
